@@ -44,10 +44,13 @@ For custom data, run `colmap` and get a folder `sparse/0` under which there are 
 
 Download data from [here](http://www.cs.umd.edu/~mmeshry/projects/rtmv/). To convert the hdr images into ldr images for training, run `python misc/prepare_rtmv.py <path/to/RTMV>`, it will create `images/` folder under each scene folder, and will use these images to train (and test).
 
-After preparing the data as described above, it is recommended that the data be put into ./data. For example `./data/trex`.
+After preparing the data as described above, it is recommended that the data be put into ./data. For example `./data/trex`. 
+Here, [an example data](https://drive.google.com/file/d/1LOjVHHtxf4OwqB89cJZXrN3_nx0MDsI-/view?usp=sharing) of `trex scene` in llff format is available for a quickstart. Download `trex data`，then unzip `trex.zip` and put the unzipped `trex folder` into `. /data`.
 # Pre-trained Model Preparation
 * Download data from [checkpoints of the VGG](https://drive.google.com/drive/folders/1lwoYBeOGnz3pa4YFw3UeF6pKnmcYCaBC?usp=drive_link), then put `fc_encoder_iter_160000.pth` and `vgg_normalised.pth` into `./pretrained_StyleVAE`.
 * Download data from [ArtBench data](https://drive.google.com/drive/folders/1gXg2yCvVMrGtUs-XIVY4IMri0y3oVCjU?usp=drive_link), then decompress `rdm.zip` and  put `rdm` into `./Latent_Diffusion/data`.
+
+
 # Training and Testing
 1. First Stage(Quickstart):
 ```
