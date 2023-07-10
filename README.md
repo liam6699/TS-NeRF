@@ -72,7 +72,4 @@ Our code is based on [Instant Neural Graphics Primitives with a Multiresolution 
 The implementation of the Nearest neighbor vector searcher are based on [High-Resolution Image Synthesis with Latent Diffusion Models](https://github.com/CompVis/latent-diffusion.git).  
 The implementation of Consistency metric(Temporal Warping Error) is derived from [Learning Blind Video Temporal Consistency](https://github.com/phoenix104104/fast_blind_video_consistency).
 
-# TODO
 
-- [ ] use super resolution in GUI to improve FPS
-- [ ] multi-sphere images as background
