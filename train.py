@@ -266,7 +266,7 @@ class NeRFSystem(LightningModule):
                 loss_d = {}
             loss_d["content_loss"] = content_loss * 0.01
             loss_d["hcl_loss"] = hcl_loss * 1
-            loss_d["clip_loss"] = clip_loss * 25
+            loss_d["clip_loss"] = clip_loss * 28
             loss = sum(lo.mean() for lo in loss_d.values())
         else:
             results = self(batch, split='train')

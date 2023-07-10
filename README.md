@@ -58,7 +58,7 @@ python train.py --root_dir <data/trex> --exp_name trex__style --dataset_name col
 python train.py --root_dir <data/trex> --exp_name trex__style --dataset_name colmap --stage second_stage --weight_path <ckpts/colmap/trex__style/first_stage.ckpt> --style_target "Pixar 3D style" --num_epochs 1 
 ```
 
-It will train the `Trex` scene for 30k steps (each step with 8192 rays), and perform one testing at the end. The training process should finish within about 5 minutes (saving testing image is slow, add `--no_save_test` to disable). The test results will be shown in `./results`
+It will train the `Trex` scene for 30k steps (each step with 8192 rays), and perform one testing at the end. The training process should finish within about 5 minutes (saving testing image is slow, add `--no_save_test` to disable). The test results will be shown in `./results`.
 
 More options can be found in [opt.py](opt.py).
 

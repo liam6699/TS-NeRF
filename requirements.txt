@@ -13,5 +13,5 @@ trimesh
 dearpygui
 clip
 PIL
-# -- The following is optional, install if nearest neighbor searcher is desired.
+# The following is optional, install if nearest neighbor searcher is desired.
 git+https://github.com/CompVis/latent-diffusion.git
