@@ -33,7 +33,7 @@ In addition, for compatibility with general hardware configurations, it is recom
 
 # Reproduction of the results
 1. Download checkpoint from [First Stage checkpoint](https://drive.google.com/file/d/1MUKCmG_NtXx6VFOu5ktP20gxqH89uMiE/view?usp=sharing), then put `last.ckpt` into `./ckpts`.
-2. Open a shell command window and run the following command.:
+2. Open a shell command window and run the following command:
 ```
 cd TS-NeRF
 
