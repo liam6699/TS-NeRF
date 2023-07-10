@@ -22,13 +22,12 @@ The implementation of the code's speed-up is based on the [instant-NGP](https://
 
 * Cuda extension: Upgrade `pip` to >= 22.1 and run `pip install models/csrc/` (please run this each time you `pull` the code)
 
-# Datasets
-Here, [an example data](https://drive.google.com/file/d/1LOjVHHtxf4OwqB89cJZXrN3_nx0MDsI-/view?usp=sharing) of `trex scene` in llff format is available for a quickstart. Download `trex data`，then unzip `trex.zip` and put the unzipped `trex folder` into `. /data`.
-
+# Datasets, Pre-trained Model and Checkpoint
+Run the following shell command to get datasets, pre-trained model and checkpoint for first stage.
+```
+bash ./download_data.sh
+```
 In addition, for compatibility with general hardware configurations, it is recommended that dataset archive sizes be kept within 512*512 pixels.
-
-# Pre-trained Model Preparation
-* Download data from [checkpoints of the VGG](https://drive.google.com/drive/folders/1lwoYBeOGnz3pa4YFw3UeF6pKnmcYCaBC?usp=drive_link), then put `fc_encoder_iter_160000.pth` and `vgg_normalised.pth` into `./pretrained_StyleVAE`.
 
 
 # Reproduction of the results
