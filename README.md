@@ -46,8 +46,8 @@ Download data from [here](http://www.cs.umd.edu/~mmeshry/projects/rtmv/). To con
 
 After preparing the data as described above, it is recommended that the data be put into ./data. For example `./data/trex`.
 # Pre-trained Model Preparation
-* Download data from [checkpoints of the VGG](https://drive.google.com/drive/folders/1lwoYBeOGnz3pa4YFw3UeF6pKnmcYCaBC?usp=drive_link), then put `fc_encoder_iter_160000.pth` and `vgg_normalised.pth` into ./pretrained_StyleVAE
-* Download data from [ArtBench data](https://drive.google.com/drive/folders/1gXg2yCvVMrGtUs-XIVY4IMri0y3oVCjU?usp=drive_link), then decompress `rdm.zip` and  put `rdm` into ./Latent_Diffusion/data
+* Download data from [checkpoints of the VGG](https://drive.google.com/drive/folders/1lwoYBeOGnz3pa4YFw3UeF6pKnmcYCaBC?usp=drive_link), then put `fc_encoder_iter_160000.pth` and `vgg_normalised.pth` into `./pretrained_StyleVAE`.
+* Download data from [ArtBench data](https://drive.google.com/drive/folders/1gXg2yCvVMrGtUs-XIVY4IMri0y3oVCjU?usp=drive_link), then decompress `rdm.zip` and  put `rdm` into `./Latent_Diffusion/data`.
 # Training and Testing
 1. First Stage(Quickstart):
 ```
@@ -69,7 +69,7 @@ For other public dataset training, please refer to the scripts under `benchmarki
 # Acknowledgments
 
 Our code is based on [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://github.com/kwea123/ngp_pl).  
-The implementation of Nearest neighbor vector searcher are based on [High-Resolution Image Synthesis with Latent Diffusion Models](https://github.com/CompVis/latent-diffusion.git).  
+The implementation of the Nearest neighbor vector searcher are based on [High-Resolution Image Synthesis with Latent Diffusion Models](https://github.com/CompVis/latent-diffusion.git).  
 The implementation of Consistency metric(Temporal Warping Error) is derived from [Learning Blind Video Temporal Consistency](https://github.com/phoenix104104/fast_blind_video_consistency).
 
 # TODO
