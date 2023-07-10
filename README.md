@@ -31,7 +31,7 @@ In addition, for compatibility with general hardware configurations, it is recom
 
 
 # Reproduction of the results
-Open a shell command window and run the following command:
+Run the following shell command to get the reproduced results (Quickstart):
 ```
 cd TS-NeRF
 
