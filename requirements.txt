@@ -11,5 +11,5 @@ scipy
 pymcubes
 trimesh
 dearpygui
-clip
 PIL
+git+https://github.com/openai/CLIP.git
