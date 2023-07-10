@@ -44,21 +44,21 @@ For custom data, run `colmap` and get a folder `sparse/0` under which there are 
 
 Download data from [here](http://www.cs.umd.edu/~mmeshry/projects/rtmv/). To convert the hdr images into ldr images for training, run `python misc/prepare_rtmv.py <path/to/RTMV>`, it will create `images/` folder under each scene folder, and will use these images to train (and test).
 
-After preparing the data as described above, it is recommended that the data be put into ./data
+After preparing the data as described above, it is recommended that the data be put into ./data. For example `./data/trex`.
 # Pre-trained Model Preparation
 * Download data from [checkpoints of the VGG](https://drive.google.com/drive/folders/1lwoYBeOGnz3pa4YFw3UeF6pKnmcYCaBC?usp=drive_link), then put `fc_encoder_iter_160000.pth` and `vgg_normalised.pth` into ./pretrained_StyleVAE
 * Download data from [ArtBench data](https://drive.google.com/drive/folders/1gXg2yCvVMrGtUs-XIVY4IMri0y3oVCjU?usp=drive_link), then decompress `rdm.zip` and  put `rdm` into ./Latent_Diffusion/data
 # Training and Testing
 1. First Stage(Quickstart):
 ```
-python train.py --root_dir <data/trex> --exp_name trex__style --dataset_name colmap --stage first_stage
+python train.py --root_dir <data/trex> --exp_name trex__style --dataset_name colmap --stage first_stage --num_epochs 5
 ```
 2. Second Stage(Quickstart):
 ```
-python train.py --root_dir <data/trex> --exp_name trex__style --dataset_name colmap --stage second_stage --weight_path <ckpts/colmap/trex__style/first_stage.ckpt> --style_target Van Gogh's Starry Night Paintings 
+python train.py --root_dir <data/trex> --exp_name trex__style --dataset_name colmap --stage second_stage --weight_path <ckpts/colmap/trex__style/first_stage.ckpt> --style_target "Pixar 3D style" --num_epochs 1 
 ```
 
-It will train the `Trex` scene for 30k steps (each step with 8192 rays), and perform one testing at the end. The training process should finish within about 5 minutes (saving testing image is slow, add `--no_save_test` to disable). Testing PSNR will be shown at the end.
+It will train the `Trex` scene for 30k steps (each step with 8192 rays), and perform one testing at the end. The training process should finish within about 5 minutes (saving testing image is slow, add `--no_save_test` to disable). The test results will be shown in `./results`
 
 More options can be found in [opt.py](opt.py).
 

@@ -13,7 +13,7 @@ def get_opts():
     parser.add_argument('--split', type=str, default='train',
                         choices=['train', 'trainval', 'trainvaltest'],
                         help='use which split to train')
-    parser.add_argument('--downsample', type=float, default=0.1488,  # 0.08
+    parser.add_argument('--downsample', type=float, default=0.08,
                         help='downsample factor (<=1.0) for the images')
 
     # model parameters
@@ -78,7 +78,7 @@ def get_opts():
                         help='VGG pretrained path ')
     parser.add_argument('--fc_encoder_pretrained_path', type=str, default="pretrained_StyleVAE/fc_encoder_iter_160000.pth",
                         help='fc encoder pretrained path')
-    parser.add_argument('--style_target', type=str, default="a painting in the style of Pablo Picasso's The Mandolinist",
+    parser.add_argument('--style_target', type=str, default="Pixar 3D style",
                         help='Stylized target text')
     parser.add_argument('--enable_random_sampling', action='store_true', default=False,
                         help='whether to enable random sampling')
