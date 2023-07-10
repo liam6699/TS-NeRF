@@ -9,7 +9,7 @@ unzip trex.zip
 cd ..
 mkdir -p ckpts
 cd ckpts
-gdown 1MUKCmG_NtXx6VFOu5ktP20gxqH89uMiE
+gdown 1wF9EVg2SodlqOvuGM4cFapH0VGb8qQ-g
 
 cd ..
 mkdir -p pretrained_StyleVAE
