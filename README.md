@@ -22,50 +22,27 @@ The implementation of the code's speed-up is based on the [instant-NGP](https://
 
 * Cuda extension: Upgrade `pip` to >= 22.1 and run `pip install models/csrc/` (please run this each time you `pull` the code)
 
-# Supported Datasets
-
-1.  NSVF data
-
-Download preprocessed datasets (`Synthetic_NeRF`, `Synthetic_NSVF`, `BlendedMVS`, `TanksAndTemples`) from [NSVF](https://github.com/facebookresearch/NSVF#dataset). **Do not change the folder names** since there is some hard-coded fix in my dataloader.
-
-2.  NeRF++ data
-
-Download data from [here](https://github.com/Kai-46/nerfplusplus#data).
-
-3.  Colmap data
-
-For custom data, run `colmap` and get a folder `sparse/0` under which there are `cameras.bin`, `images.bin` and `points3D.bin`. The following data with colmap format are also supported:
-
-  *  [nerf_llff_data](https://drive.google.com/file/d/16VnMcF1KJYxN9QId6TClMsZRahHNMW5g/view?usp=sharing) 
-  *  [mipnerf360 data](http://storage.googleapis.com/gresearch/refraw360/360_v2.zip)
-  *  [HDR-NeRF data](https://drive.google.com/drive/folders/1OTDLLH8ydKX1DcaNpbQ46LlP0dKx6E-I). Additionally, download colmap pose estimation from [here](https://drive.google.com/file/d/1TXxgf_ZxNB4o67FVD_r0aBUIZVRgZYMX/view?usp=sharing) and extract to the same location.
-
-4. RTMV data
-
-Download data from [here](http://www.cs.umd.edu/~mmeshry/projects/rtmv/). To convert the hdr images into ldr images for training, run `python misc/prepare_rtmv.py <path/to/RTMV>`, it will create `images/` folder under each scene folder, and will use these images to train (and test).
-
-After preparing the data as described above, it is recommended that the data be put into ./data. For example `./data/trex`. 
+# Datasets
 Here, [an example data](https://drive.google.com/file/d/1LOjVHHtxf4OwqB89cJZXrN3_nx0MDsI-/view?usp=sharing) of `trex scene` in llff format is available for a quickstart. Download `trex data`，then unzip `trex.zip` and put the unzipped `trex folder` into `. /data`.
+
+In addition, for compatibility with general hardware configurations, it is recommended that dataset archive sizes be kept within 512*512 pixels.
+
 # Pre-trained Model Preparation
 * Download data from [checkpoints of the VGG](https://drive.google.com/drive/folders/1lwoYBeOGnz3pa4YFw3UeF6pKnmcYCaBC?usp=drive_link), then put `fc_encoder_iter_160000.pth` and `vgg_normalised.pth` into `./pretrained_StyleVAE`.
-* Download data from [ArtBench data](https://drive.google.com/drive/folders/1gXg2yCvVMrGtUs-XIVY4IMri0y3oVCjU?usp=drive_link), then decompress `rdm.zip` and  put `rdm` into `./Latent_Diffusion/data`.
 
 
-# Training and Testing
-1. First Stage(Quickstart):
+# Reproduction of the results
+1. Download checkpoint from [First Stage checkpoint](https://drive.google.com/file/d/1MUKCmG_NtXx6VFOu5ktP20gxqH89uMiE/view?usp=sharing), then put `last.ckpt` into `./ckpts`.
+2. Open a shell command window and run the following command.:
 ```
-python train.py --root_dir <data/trex> --exp_name trex__style --dataset_name colmap --stage first_stage --num_epochs 5
-```
-2. Second Stage(Quickstart):
-```
-python train.py --root_dir <data/trex> --exp_name trex__style --dataset_name colmap --stage second_stage --weight_path <ckpts/colmap/trex__style/first_stage.ckpt> --style_target "Pixar 3D style" --num_epochs 1 
+cd TS-NeRF
+
+python train.py --root_dir data/trex --exp_name trex__style --dataset_name colmap --stage second_stage --weight_path ckpts/last.ckpt --style_target "Pixar 3D style" --num_epochs 1 
 ```
 
-It will train the `Trex` scene for 30k steps (each step with 8192 rays), and perform one testing at the end. The training process should finish within about 5 minutes (saving testing image is slow, add `--no_save_test` to disable). The test results will be shown in `./results`.
+It will train the `trex` scene for 30k steps (each step with 8192 rays), and perform one testing at the end. The reproduction of results  will be shown in `./results/colmap/trex__style`.
 
 More options can be found in [opt.py](opt.py).
-
-For other public dataset training, please refer to the scripts under `benchmarking`.
 
 
 
