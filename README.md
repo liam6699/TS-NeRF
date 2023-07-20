@@ -18,7 +18,7 @@ The implementation of the code's speed-up is based on the [instant-NGP](https://
     * Install `torch-scatter` following their [instruction](https://github.com/rusty1s/pytorch_scatter#installation)
     * Install `tinycudann` following their [instruction](https://github.com/NVlabs/tiny-cuda-nn#pytorch-extension) (pytorch extension)
     * Install `apex` following their [instruction](https://github.com/NVIDIA/apex#linux)
-    * Install core requirements by `pip install -r requirements.txt`
+    * Install core requirements by `pip install -r requirements.txt` (Project root directory)
 
 * Cuda extension: Upgrade `pip` to >= 22.1 and run `pip install models/csrc/` (please run this each time you `pull` the code)
 
