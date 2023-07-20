@@ -23,7 +23,7 @@ The implementation of the code's speed-up is based on the [instant-NGP](https://
 * Cuda extension: Upgrade `pip` to >= 22.1 and run `pip install models/csrc/` (please run this each time you `pull` the code)
 
 # Datasets, Pre-trained Model and Checkpoint
-Run the following shell command to get datasets, pre-trained model and checkpoint for first stage.
+Run the following shell command to automatically download and install the datasets, pre-trained model and checkpoint for first stage.
 ```
 bash ./download_data.sh
 ```
