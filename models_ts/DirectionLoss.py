@@ -7,7 +7,7 @@ import clip
 from PIL import Image
 
 from ZSSGAN.utils.text_templates import imagenet_templates, part_templates, imagenet_templates_small
-from Latent_Diffusion.scripts import nearest_neighbor_searcher
+# from Latent_Diffusion.scripts import nearest_neighbor_searcher
 
 
 class DirectionLoss(torch.nn.Module):
