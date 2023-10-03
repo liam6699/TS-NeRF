@@ -38,7 +38,7 @@ cd TS-NeRF
 python train.py --root_dir data/trex --exp_name trex__style --dataset_name colmap --stage second_stage --weight_path ckpts/last.ckpt --style_target "Pixar 3D style" --num_epochs 1 
 ```
 
-It will train the `trex` scene for 30k steps (each step with 8192 rays), and perform one testing at the end. The reproduction of results  will be shown in `./results/colmap/trex__style`.
+It will train the `trex` scene for 1k steps (each step with 8192 rays), and perform one testing at the end. The reproduction of results  will be shown in `./results/colmap/trex__style`.
 
 More options can be found in [opt.py](opt.py).
 
